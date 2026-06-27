@@ -67,3 +67,43 @@ def calculate_total(*args):
 
 calculate_total(5000, 12000, 60000, 8000)
 print(f"Your total is {calculate_total(5000, 12000, 60000, 8000)}")
+
+TAX_RATE = 0.20
+
+def calculat_price(price):
+    final_price = price + price * TAX_RATE
+    return final_price
+
+print(f"Final price is: {calculat_price(200)} UAH")
+#
+BASE_DISCOUNT = 0.05
+def calculate_normal(price):
+    return price - price * BASE_DISCOUNT
+def calculate_vip(price):
+    vip_discount = 0.2
+    return price - price * vip_discount
+print(calculate_normal(1000))
+print(calculate_vip(1000))
+
+raw_salaries = ["  1500", "2300 ", "  1850  ", "4000"]
+clean_salaries = list(map(lambda x: int(x.strip()), raw_salaries))
+
+print(*clean_salaries)
+#%%
+multiply = lambda x: x*2
+
+double_two = multiply(2)
+print(double_two)
+
+transactions_uah = [1200, 450, 890, 15000, 320, 50]
+transactions_usd = list(map(lambda t: round(t/41.5,2), transactions_uah))
+print(transactions_usd)
+
+transfers = [50, 1500, 3200, 15, 25000, 400, 31000]
+suspicious_tr = list(filter(lambda t: t < 100 or t > 20000, transfers))
+print(suspicious_tr)
+
+clients = ["Олександр", "Яна", "Костянтин", "Іван", "Марія"]
+clients_r = list(sorted(clients, key = lambda c: len(c)))
+print(clients_r)
+
